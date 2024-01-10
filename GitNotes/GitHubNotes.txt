@@ -1,0 +1,89 @@
+                                          GIT & GITHUB
+
+01/09/2024:
+----------
+Git :
+ It is a versional control system.
+ Which is used to store code in a remote place also for backup purpose.
+
+To check it is installed in your system There is a command: "git -v".it will show its version if it is present in system otherwise open Browser and open "install git" or else go to this url " https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" and download it.
+
+gitHub and git are not same--->git is a version control system but gitHub is remote repository hosting service. They are so many hosting services which are :
+1.Bitbucket
+2.GitHub
+3.GitLab
+4.Perforce
+5.Beanstalk
+6.Amazon AWS CodeCommit
+7.Codebase
+8.Microsoft Azure DevOps
+9.SourceForge
+10.Gerrit
+
+Among these above list gitHub is so famaous because it is free which means anyone can use it and we can create any number of repositories.
+
+To store anything into git we need to know about four elements.
+
+1.workingDirectory:
+-------------------
+            This is just a place to save untracked files in our local system but here the code will go to local repository after staging. By using a command 'git add "file_name"' we can move repositories to staging block from working directory.Here we can choose which are the files we want to move to staging block.once the file moved to staging area it is considered as Tracked file/repo.
+
+
+2.staging :
+----------
+           This is a process where we can track all the files which we want to bring to local directory from working directory.Here all the tracked file can be moved to Local directory by using a command 'git commit -m "comments about commit"'.
+
+3.Local repository  :
+---------------------
+            This is the place where code will be store in our local to push into remote repo.what all the repositories in this local repository we can move to remote repository by using a command 'git push'. Here we can't select the files to move into remote.
+
+4.remote repository :
+---------------------
+           This is the place where all ur files are stored when we push our code.This code will store in a remote place and tracks all the changes done to this code and also accessible to everyone depends on type of repository.if we make that repo as public then everyone can access it,if it is privite it is only accessible to us. 
+
+        ------------------***********************************************************************-----------------------------
+
+
+Process How to push into Git :
+------------------------------
+1.Open github 
+2.login if u have account or create a new account.
+3.click on new --> Give repository name --> choose public or private(by default Public) --> Click on create repository
+4.Now yor remote repository is ready.
+5.Now we need to make ready our files in local for that open the folder where your files are stored(working directory).we need to link this folder to git for that we need to open "cmd" and use a command 'git init'.
+6.next step is adding files to local repository by using a command 'git add file_name'.
+7.next step is adding files from working directory to local repository by using a command 'git commit -m <comment>' this comment is just a message about this commit.
+8.next step is selecting branch by default it is master branch.(To check branch there is a command 'git branch')
+9.we need to add this local repository to remote repository for that we need to use a command 'git remote add origin "url"'
+10.after linking local repository to remote last and final step is to push our code to remote for that there is a command we need to use which is 'git push -u origin master'.Here in this step we r pushing code to master  branch.
+      
+
+       -------------------*********************************************************************---------------------------------
+
+Git Branches:
+--------------
+       when u create a repository there will be a default branch called master/main. The code in this master branch will be used to deploy. we can create many branches from this master/main branch for development(when we need to add any aditional code).once if we write additional code in our feature branch we need to add it to master branch for that we need to raise PR(Pull Request).
+
+How to create a branch:
+-----------------------
+To create a new branch we need to use a command "git commit -b <branch name>".Here -b indicates to create a new branch.This checkout command is used to Jump between the branches.if branch is already exist then Just use "git checkout <branch name>" command.
+
+After creating a branch To push code to this branch:
+follow the process:
+    1.git branch
+    2.git status
+    3.git add (if u find any untracked files)
+    4.git commit
+    5.git push --set-upstream origin <branch name> (we want our code to push into a branch(other than master) we need to upstream)
+
+
+   -------------------------------------------*******************************-----------------------------------------------------
+
+*To clone a repo into local: we need to use a command 'git clone <git url>'
+
+*If we want to work on any opensource.we can use fork  option so that it can clone that code and we can create a branch and we can make changes          and raise pr.if owners like our changes then they will merge that code. 
+
+*Merge Conflicts : Before raising pr we need to check whether our code is in sync with master otherwise we cant merge and it will show conflict.to solve this our code needs to be up to date with master branch.so to update our code we need to use a command 'git fetch' it will just fetch all new changes but it will not add those new changes to our code. to add those changes instead of fetch we need to use 'git pull'.
+Once our code is up-to-date we can raise pr.
+
+To get all latest changes from master to feature branch use a command 'git merge <branch Name>'. for ex: git merge origin/master.now all latest codes will come into ur feature branch.for merging it will ask do we need to keep only master branch code or only feature branch code or both.we need to select one from it.after this process if we raise pr we wont get any conflicts.
